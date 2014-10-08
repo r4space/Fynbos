@@ -1,0 +1,65 @@
+#!/usr/bin/python2.6
+#Generates a test_bench input for a hydra system
+#All configurable hydra pareameters are set in test_parameters.py
+#The system tests the following in the hydra system
+from test_parameters import *
+import sys
+import floatconversion
+fc = floatconversion
+import intconversion
+ic = intconversion
+
+###File_Initialisations############################################
+outputFile1 = "Formatted_for_ROACH.txt"
+FFR = open(outputFile1,"w")
+##Standard system functionality
+#	Test Branch if true		--DONE
+#	Test Branch if false	--DONE
+#	Test TRUE_NOPs 
+
+##Load data tests
+#	Test loading only 99% of a strip in a packet twice
+#	Test loading only one strip in a packet twice in a row
+#	Test loading 99% of a tile in a packet twice in a row
+#	Test loading only one tile in a packet twice in a row
+#	Test loading 99% of the system
+#	Test a full load of the system in one packet
+
+##Load instructions tests
+#	Test loading only 99% of a strip in a packet twice in a row
+#	Test loading only one strip in a packet twice in a row
+#	Test loading 99% of a tile in a packet twice in a rowe
+#	Test loading only one tile in a packet twice in a row
+#	Test loading 99% of the system
+#	Test a full load of the system in one packet
+
+##Off-loading tests
+#	Off-load data from the 1st to last strip of the system
+#	Off-load a quantity that is just LESS than a packet size
+#	Off-load a quantity that is just MORE than a packet size
+#	Off-load a quantity that is just LESS than a strip's contents`
+#	Off-load a quantity that is just MORE than a strip's contents`
+
+##On chip communication tests	--DONE
+#	Test all inter-strip communucation paths in the 1st, a random middle, a division and the last tiles
+#	Test all inter-tile communication paths between the;
+#		1st <----> 2nd
+#		1st <----> last
+#		1st <----> a random middle
+#		a random middle <----> last
+#		a random middle <----> another random middle
+
+##Numerics tests
+#	Test division in each strip supposedly containing a divisor
+#	Test rounding operation in all applicable operators
+#	Test for expected overflow behaviour
+#	Test for expected underflow behaviour
+#	Test precision
+#	Test accuracy
+#	Test all operators function as expected
+
+##Maybe before anything, do a system memory test, eg load unique individual values into every location and increment by one
+
+##Test quick load - load the system in as few packets as possible same as you'd do for a real run, this also tests that the roll over memory access accross mutiple strips/tiles works too as you load all data with on command etc if you assume there's an instruction/data item for every spot in memory
+
+FFR.close()

@@ -1,0 +1,179 @@
+# The following assumes an 2Tx3S hydra with 2 division strips as the last 2 strips in the whole system
+
+*******************************************************************************************************************************
+*******************************************************************************************************************************
+
+----INSTRUCTIONS:
+
+----------------------------------T0S0---------------------------------
+##Branch testing
+#Load the following instructions into T0S0 in the following rows
+Row	Addr2		Selq	Opcode	Sel1	Sel0	Addr1		Addr0				
+0	00000000000 000 	000001 	000 	000		00000000010 00000000000 		
+1	00000000001 000 	011111 	000 	001		00000000001 11111111110		
+2	00000000010 000 	000001 	000 	000		00000000011 00000000010 	
+3	00000000011 000 	001001 	000 	001		00000000101 11111111110 	
+4	00000000100 000 	000000 	000 	000		11111111110 00000000011 	
+5	00000000101 000 	000010 	000 	000		00000000110 00000000101 	
+6	00000000110 000 	000000 	000 	000		11111111110 11111111110		
+
+##Test all inter-strip communucation paths in all Tiles
+#Load the following instructions into T0S0 and into all other S0 strips in the whole system for these rows (just changing Selq for other tiles)
+7	00000000111 000 	000000 	000 	000		11111111110 00000000111 		
+8   00000001000 000 	000000 	000 	000		00000001000 11111111110		
+9   00000001001 000 	000001 	000 	001		00000001101 11111111110 	//1101 = 13 = 2**NO_STRIPS+7 => location at which 0 is stored 
+10  00000001010 000 	000001 	001 	000		11111111110 00000001101 	
+11  00000001011 000 	000001 	000 	010		00000001101 11111111110 	
+12  00000001100 000 	000001 	010 	000		11111111110 00000001101 	//Row12 = Row7 + (NO_STRIPS*2 -1) = 7+2*8strips-1  = 12
+13  00000001101 000		000000	000		000		11111111110 11111111110
+
+----------------------------------T0S1---------------------------------
+##Branch testing
+#Load the following instructions into T0S1 in the following rows
+Row	Addr2		Selq	Opcode	Sel1 	Sel0 	Addr1		Addr0		
+0	00000000000 000 	001010 	001 	000		00000000001 11111111110	
+1	00000000001 000 	000000 	001 	001		11111111110 00000000000 
+2	00000000010 000 	000001 	001 	001		00000000011 00000000010 
+3	00000000011 000 	000001 	001 	001		00000000101 00000000100 
+4	00000000100 000 	011111 	001 	000		00000000110 11111111110 
+5	00000000101 000 	000001 	001 	001		00000000110 00000000101 
+6	00000000110 000 	000000 	001 	001		11111111110 11111111110 
+
+##Test all inter-strip communucation paths in all Tiles
+#Load the following instructions into T0S1 and into all other S1 strips in the whole system for these rows (just changing Selq for other tiles)
+7	00000000111 000 	000001 	001 	000		00000001101 11111111110 		
+8   00000001000 000 	000001 	000 	001		11111111110 00000001101		
+9   00000001001 000 	000000 	001 	001		11111111110 00000001001
+10  00000001010 000 	000000 	001 	001		00000001010 11111111110 	
+11  00000001011 000 	000001 	001 	010		00000001101 11111111110 	
+12  00000001100 000 	000001 	010 	001		11111111110 00000001101
+13  00000001101 000		000000	001		001		11111111110 11111111110
+
+
+----------------------------------T0S2--------------------------------
+##Branch testing
+#Load the following instructions into T0S2 
+#Also load the equivalent of this into these rows in all other strips apart from T0S0 and T0S1 specified above.  Selq, Sel1 and Sel0 will need appropriate altering
+Row	Addr2		Selq	Opcode	Sel1	Sel0	Addr1		Addr0		
+0	00000000000 000 	000000 	010 	010		11111111110 11111111110 	
+1	00000000001 000 	000000 	010 	010		11111111110 11111111110 	
+2	00000000010 000 	000000 	010 	010		11111111110 11111111110 	
+3	00000000011 000 	000000 	010 	010		11111111110 11111111110 	
+4	00000000100 000 	000000 	010 	010		11111111110 11111111110 	
+5	00000000101 000 	000000 	010 	010		11111111110 11111111110 	
+6	00000000110 000 	000000 	010 	010		11111111110 11111111110 	
+
+##Test all inter-strip communucation paths in all Tiles
+#Load the following instructions into T0S2 and into all other S2 strips in the whole system for these rows (just changing Selq for other tiles)
+7	00000000111 000 	000001 	010 	000		00000001101 11111111110 		
+8   00000001000 000 	000001 	000 	010		11111111110 00000001101		
+9   00000001001 000 	000001 	010 	001		00000001101 11111111110 
+10  00000001010 000 	000001 	001 	010		11111111110 00000001101 	
+11  00000001011 000 	000000 	010 	010		11111111110 00000001011 	
+12  00000001100 000 	000000 	010 	010		00000001100 11111111110
+13  00000001101 000		000000  010     010		11111111110 11111111110
+
+
+----------------------------------TXSX---------------------------------
+##Test all inter-Tile communucation paths in all Tiles
+#Load the following instructions, altered appropriately, into all strips in all tiles at the following addresses
+
+EgT0S0
+
+14  00000001110 000 	000101 	000 	000		11111111110 00000010001	//10001=NO_TILES+row13+1 =>location at which Local value to be exported is stored
+15  00000010010 001 	000000 	000 	000		11111111110 11111111110 
+16  00000010011 010 	000000 	000 	000		11111111110 11111111110 	
+17  00000010001 000 	000000 	000 	000		11111111110 11111111110 	
+18  00000010010 000 	000000 	000 	000		11111111110 11111111110 	
+19  00000010011 000 	000000 	000 	000		11111111110 11111111110 	
+
+
+#Branch testing
+
+*******************************************************************************************************************************
+*******************************************************************************************************************************
+
+----DATA:
+ 
+----------------------------------T0S0---------------------------------
+#Branch testing
+#Load the following data into T0S0 at the following addresses
+Address		Value				Termination value
+	0	 	0000000000000000	B
+	1 		0000000000000000	0
+	2 		0000000000000001	5	
+	3 		0000000000000004	0
+	4 		FFFFFFFFFFFFFFF0	X
+	5 		000000000000000A	4
+	6 		0000000000000006	6
+
+#Load the following data into T0S0 and all other S0 strips in the whole system at the following addresses
+	7		AAAAAAAAAAAAAAA1	...A1
+	8		AAAAAAAAAAAAAAA2	...A2
+	9		FFFFFFFFFFFFFFF0	...B1	
+	10		FFFFFFFFFFFFFFF0	...B2
+	11		FFFFFFFFFFFFFFF0	...C1
+	12		FFFFFFFFFFFFFFF0	...C2
+	13		0000000000000000	0
+	
+#Load the following
+	14		FFFFFFFFFFFFFFF0	X
+	15		FFFFFFFFFFFFFFF0	X
+	16		FFFFFFFFFFFFFFF0	X
+	17		0000000000000005	05
+	18		FFFFFFFFFFFFFFF0	19
+	19		FFFFFFFFFFFFFFF0	2D
+
+----------------------------------T0S1---------------------------------
+#Branch testing
+#Load the following data into T0S1 at the following addresses
+Address		Value				Termination value
+	0	 	FFFFFFFFFFFFFFF0	1
+	1 		000000000000000A	A
+	2 		0000000000000003	5	
+	3 		0000000000000002	B
+	4 		0000000000000000	0
+	5 		0000000000000001	4
+	6 		0000000000000003	3
+
+#Load the following data into T0S1 and all other S1 strips in the whole system at the following addresses
+	7		FFFFFFFFFFFFFFF0	...A1
+	8       FFFFFFFFFFFFFFF0	...A2
+	9       BBBBBBBBBBBBBBB1	...B1	
+	10      BBBBBBBBBBBBBBB2	...B2
+	11      FFFFFFFFFFFFFFF0	...C1
+	12      FFFFFFFFFFFFFFF0	...C2
+	13		0000000000000000	0
+
+#Load the following
+	14		FFFFFFFFFFFFFFF0	X
+	15		FFFFFFFFFFFFFFF0		17		0000000000000019	06
+	18		FFFFFFFFFFFFFFF0	1A
+	19		FFFFFFFFFFFFFFF0	2D
+
+
+----------------------------------T0S2---------------------------------
+#Branch testing
+#Load the following data into T0S2 and into all other strips in the whole system at the following addresses
+Address		Value				Termination value
+	0	 	FFFFFFFFFFFFFFF0	X
+	1 		FFFFFFFFFFFFFFF0	X
+	2 		FFFFFFFFFFFFFFF0	X
+	3 		FFFFFFFFFFFFFFF0	X
+	4 		FFFFFFFFFFFFFFF0	X
+	5 		FFFFFFFFFFFFFFF0	X
+	6 		FFFFFFFFFFFFFFF0	X
+
+#Load the following data into T0S2 and all other S2 strips in the whole system at the following addresses
+	7		FFFFFFFFFFFFFFF0	...A1
+	8       FFFFFFFFFFFFFFF0	...A2
+	9       FFFFFFFFFFFFFFF0	...B1	
+	10      FFFFFFFFFFFFFFF0	...B2 
+	11      CCCCCCCCCCCCCCC1	...C1
+	12      CCCCCCCCCCCCCCC2	...C2
+	13		0000000000000000	0
+	
+
+---------------------------------------------------------------------------------------
+RUN:		0000000000000100 00000000000 000 000 011	Run from row 0 to 4 |
+OFFLOAD:							1001 010 001 100	Off load all data from T1S2L9 till the end | 000000000000128C

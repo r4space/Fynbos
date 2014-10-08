@@ -1,0 +1,916 @@
+<?xml version="1.0"?>
+<file id="ss_1_body.xml" date="18-MAR-14" time=" 8:10:55" drxh_id="drxh V2.5">
+	<map n_tiles=" 5" n_strips=" 6" n_rows="  1024" end_row="    35">
+		<row id="    0">
+			<tile id=" 0">
+				<strip id=" 0">
+					<operator id="MULTIPLY_R4" output="RTEMP_1" input_0="EARTH_X" input_1="EARTH_X" input_strip_0=" 0" input_strip_1=" 0" value="0.0000000000000000E+00"/>
+					<export export_symbol_0="EARTH_X" export_symbol_1="EARTH_X" export_row_0="  33" export_row_1="  33"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 1">
+					<operator id="NOP_I4" output="NULL" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="NULL"/>
+					<export export_symbol_0="EARTH_Y" export_symbol_1="EARTH_Y" export_row_0="  33" export_row_1="  33"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 3">
+					<operator id="MULTIPLY_R4" output="RTEMP_2" input_0="EARTH_Y" input_1="EARTH_Y" input_strip_0=" 1" input_strip_1=" 1" value="0.0000000000000000E+00"/>
+					<export export_symbol_0="NULL" export_symbol_1="NULL" export_row_0="  -1" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+			</tile>
+		</row>
+		<row id="    1">
+			<tile id=" 0">
+				<strip id=" 0">
+					<operator id="NOP_I4" output="NULL" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="NULL"/>
+					<export export_symbol_0="RTEMP_1" export_symbol_1="NULL" export_row_0="   0" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 3">
+					<operator id="NOP_I4" output="NULL" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="NULL"/>
+					<export export_symbol_0="NULL" export_symbol_1="RTEMP_2" export_row_0="  -1" export_row_1="   0"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 5">
+					<operator id="ADD_R4" output="EARTH_R2" input_0="RTEMP_1" input_1="RTEMP_2" input_strip_0=" 0" input_strip_1=" 3" value="0.0000000000000000E+00"/>
+					<export export_symbol_0="NULL" export_symbol_1="NULL" export_row_0="  -1" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+			</tile>
+			<tile id=" 1">
+				<strip id=" 5">
+					<operator id="NOP_I4" output="NULL" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="NULL"/>
+					<export export_symbol_0="NULL" export_symbol_1="NULL" export_row_0="  -1" export_row_1="  -1"/>
+					<import import_symbol="EARTH_R2" source_tile=" 0" destination_row="  32"/>
+				</strip>
+			</tile>
+		</row>
+		<row id="    2">
+			<tile id=" 0">
+				<strip id=" 0">
+					<operator id="NOP_I4" output="NULL" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="NULL"/>
+					<export export_symbol_0="NULL" export_symbol_1="NULL" export_row_0="  -1" export_row_1="  -1"/>
+					<import import_symbol="RTEMP_4" source_tile=" 1" destination_row="  30"/>
+				</strip>
+			</tile>
+			<tile id=" 1">
+				<strip id=" 0">
+					<operator id="DIVIDE_R4" output="RTEMP_4" input_0="EARTH_R2" input_1="P_SCALE" input_strip_0=" 5" input_strip_1=" 2" value="0.0000000000000000E+00"/>
+					<export export_symbol_0="NULL" export_symbol_1="NULL" export_row_0="  -1" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 2">
+					<operator id="NOP_I4" output="NULL" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="NULL"/>
+					<export export_symbol_0="NULL" export_symbol_1="P_SCALE" export_row_0="  -1" export_row_1="  33"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 5">
+					<operator id="NOP_I4" output="NULL" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="NULL"/>
+					<export export_symbol_0="EARTH_R2" export_symbol_1="NULL" export_row_0="  32" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+			</tile>
+		</row>
+		<row id="    3">
+			<tile id=" 0">
+				<strip id=" 0">
+					<operator id="NOP_I4" output="NULL" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="NULL"/>
+					<export export_symbol_0="RTEMP_4" export_symbol_1="NULL" export_row_0="  30" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 3">
+					<operator id="ADD_R4" output="RTEMP_5" input_0="RTEMP_4" input_1="P_SCALE" input_strip_0=" 0" input_strip_1=" 3" value="0.0000000000000000E+00"/>
+					<export export_symbol_0="NULL" export_symbol_1="P_SCALE" export_row_0="  -1" export_row_1="  31"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+			</tile>
+		</row>
+		<row id="    4">
+			<tile id=" 0">
+				<strip id=" 2">
+					<operator id="MULTIPLY_R4" output="T1" input_0="RTEMP_5" input_1="K_0_500000" input_strip_0=" 3" input_strip_1=" 3" value="0.0000000000000000E+00"/>
+					<export export_symbol_0="NULL" export_symbol_1="NULL" export_row_0="  -1" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 3">
+					<operator id="NOP_I4" output="NULL" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="NULL"/>
+					<export export_symbol_0="RTEMP_5" export_symbol_1="K_0_500000" export_row_0="   3" export_row_1="  32"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+			</tile>
+		</row>
+		<row id="    5">
+			<tile id=" 0">
+				<strip id=" 2">
+					<operator id="NOP_I4" output="NULL" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="NULL"/>
+					<export export_symbol_0="NULL" export_symbol_1="T1" export_row_0="  -1" export_row_1="   4"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 3">
+					<operator id="DIVIDE_R4" output="RTEMP_6" input_0="EARTH_R2" input_1="T1" input_strip_0=" 5" input_strip_1=" 2" value="0.0000000000000000E+00"/>
+					<export export_symbol_0="NULL" export_symbol_1="NULL" export_row_0="  -1" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 5">
+					<operator id="NOP_I4" output="NULL" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="NULL"/>
+					<export export_symbol_0="EARTH_R2" export_symbol_1="NULL" export_row_0="   1" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+			</tile>
+		</row>
+		<row id="    6">
+			<tile id=" 0">
+				<strip id=" 2">
+					<operator id="ADD_R4" output="RTEMP_7" input_0="T1" input_1="RTEMP_6" input_strip_0=" 2" input_strip_1=" 3" value="0.0000000000000000E+00"/>
+					<export export_symbol_0="T1" export_symbol_1="NULL" export_row_0="   4" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 3">
+					<operator id="NOP_I4" output="NULL" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="NULL"/>
+					<export export_symbol_0="NULL" export_symbol_1="RTEMP_6" export_row_0="  -1" export_row_1="   5"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+			</tile>
+		</row>
+		<row id="    7">
+			<tile id=" 0">
+				<strip id=" 2">
+					<operator id="NOP_I4" output="NULL" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="NULL"/>
+					<export export_symbol_0="RTEMP_7" export_symbol_1="NULL" export_row_0="   6" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 3">
+					<operator id="NOP_I4" output="NULL" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="NULL"/>
+					<export export_symbol_0="NULL" export_symbol_1="K_0_500000" export_row_0="  -1" export_row_1="  32"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 4">
+					<operator id="MULTIPLY_R4" output="T2" input_0="RTEMP_7" input_1="K_0_500000" input_strip_0=" 2" input_strip_1=" 3" value="0.0000000000000000E+00"/>
+					<export export_symbol_0="NULL" export_symbol_1="NULL" export_row_0="  -1" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+			</tile>
+		</row>
+		<row id="    8">
+			<tile id=" 0">
+				<strip id=" 3">
+					<operator id="DIVIDE_R4" output="RTEMP_8" input_0="EARTH_R2" input_1="T2" input_strip_0=" 5" input_strip_1=" 4" value="0.0000000000000000E+00"/>
+					<export export_symbol_0="NULL" export_symbol_1="NULL" export_row_0="  -1" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 4">
+					<operator id="NOP_I4" output="NULL" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="NULL"/>
+					<export export_symbol_0="NULL" export_symbol_1="T2" export_row_0="  -1" export_row_1="   7"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 5">
+					<operator id="NOP_I4" output="NULL" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="NULL"/>
+					<export export_symbol_0="EARTH_R2" export_symbol_1="NULL" export_row_0="   1" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+			</tile>
+		</row>
+		<row id="    9">
+			<tile id=" 0">
+				<strip id=" 3">
+					<operator id="NOP_I4" output="NULL" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="NULL"/>
+					<export export_symbol_0="NULL" export_symbol_1="RTEMP_8" export_row_0="  -1" export_row_1="   8"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 4">
+					<operator id="ADD_R4" output="RTEMP_9" input_0="T2" input_1="RTEMP_8" input_strip_0=" 4" input_strip_1=" 3" value="0.0000000000000000E+00"/>
+					<export export_symbol_0="T2" export_symbol_1="NULL" export_row_0="   7" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+			</tile>
+		</row>
+		<row id="   10">
+			<tile id=" 0">
+				<strip id=" 1">
+					<operator id="MULTIPLY_R4" output="T3" input_0="RTEMP_9" input_1="K_0_500000" input_strip_0=" 4" input_strip_1=" 3" value="0.0000000000000000E+00"/>
+					<export export_symbol_0="NULL" export_symbol_1="NULL" export_row_0="  -1" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 3">
+					<operator id="NOP_I4" output="NULL" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="NULL"/>
+					<export export_symbol_0="NULL" export_symbol_1="K_0_500000" export_row_0="  -1" export_row_1="  32"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 4">
+					<operator id="NOP_I4" output="NULL" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="NULL"/>
+					<export export_symbol_0="RTEMP_9" export_symbol_1="NULL" export_row_0="   9" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+			</tile>
+		</row>
+		<row id="   11">
+			<tile id=" 0">
+				<strip id=" 1">
+					<operator id="NOP_I4" output="NULL" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="NULL"/>
+					<export export_symbol_0="NULL" export_symbol_1="T3" export_row_0="  -1" export_row_1="  10"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 3">
+					<operator id="DIVIDE_R4" output="RTEMP_10" input_0="EARTH_R2" input_1="T3" input_strip_0=" 5" input_strip_1=" 1" value="0.0000000000000000E+00"/>
+					<export export_symbol_0="NULL" export_symbol_1="NULL" export_row_0="  -1" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 5">
+					<operator id="NOP_I4" output="NULL" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="NULL"/>
+					<export export_symbol_0="EARTH_R2" export_symbol_1="NULL" export_row_0="   1" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+			</tile>
+		</row>
+		<row id="   12">
+			<tile id=" 0">
+				<strip id=" 1">
+					<operator id="ADD_R4" output="RTEMP_11" input_0="T3" input_1="RTEMP_10" input_strip_0=" 1" input_strip_1=" 3" value="0.0000000000000000E+00"/>
+					<export export_symbol_0="T3" export_symbol_1="NULL" export_row_0="  10" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 3">
+					<operator id="NOP_I4" output="NULL" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="NULL"/>
+					<export export_symbol_0="NULL" export_symbol_1="RTEMP_10" export_row_0="  -1" export_row_1="  11"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+			</tile>
+		</row>
+		<row id="   13">
+			<tile id=" 0">
+				<strip id=" 0">
+					<operator id="MULTIPLY_R4" output="T4" input_0="RTEMP_11" input_1="K_0_500000" input_strip_0=" 1" input_strip_1=" 3" value="0.0000000000000000E+00"/>
+					<export export_symbol_0="NULL" export_symbol_1="NULL" export_row_0="  -1" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 1">
+					<operator id="NOP_I4" output="NULL" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="NULL"/>
+					<export export_symbol_0="RTEMP_11" export_symbol_1="NULL" export_row_0="  12" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 3">
+					<operator id="NOP_I4" output="NULL" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="NULL"/>
+					<export export_symbol_0="NULL" export_symbol_1="K_0_500000" export_row_0="  -1" export_row_1="  32"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+			</tile>
+		</row>
+		<row id="   14">
+			<tile id=" 0">
+				<strip id=" 0">
+					<operator id="NOP_I4" output="NULL" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="NULL"/>
+					<export export_symbol_0="NULL" export_symbol_1="T4" export_row_0="  -1" export_row_1="  13"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 3">
+					<operator id="DIVIDE_R4" output="RTEMP_12" input_0="EARTH_R2" input_1="T4" input_strip_0=" 5" input_strip_1=" 0" value="0.0000000000000000E+00"/>
+					<export export_symbol_0="NULL" export_symbol_1="NULL" export_row_0="  -1" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 5">
+					<operator id="NOP_I4" output="NULL" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="NULL"/>
+					<export export_symbol_0="EARTH_R2" export_symbol_1="NULL" export_row_0="   1" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+			</tile>
+		</row>
+		<row id="   15">
+			<tile id=" 0">
+				<strip id=" 0">
+					<operator id="ADD_R4" output="RTEMP_13" input_0="T4" input_1="RTEMP_12" input_strip_0=" 0" input_strip_1=" 3" value="0.0000000000000000E+00"/>
+					<export export_symbol_0="T4" export_symbol_1="NULL" export_row_0="  13" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 3">
+					<operator id="NOP_I4" output="NULL" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="NULL"/>
+					<export export_symbol_0="NULL" export_symbol_1="RTEMP_12" export_row_0="  -1" export_row_1="  14"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+			</tile>
+		</row>
+		<row id="   16">
+			<tile id=" 0">
+				<strip id=" 0">
+					<operator id="NOP_I4" output="NULL" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="NULL"/>
+					<export export_symbol_0="RTEMP_13" export_symbol_1="NULL" export_row_0="  15" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 2">
+					<operator id="MULTIPLY_R4" output="T5" input_0="RTEMP_13" input_1="K_0_500000" input_strip_0=" 0" input_strip_1=" 3" value="0.0000000000000000E+00"/>
+					<export export_symbol_0="NULL" export_symbol_1="NULL" export_row_0="  -1" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 3">
+					<operator id="NOP_I4" output="NULL" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="NULL"/>
+					<export export_symbol_0="NULL" export_symbol_1="K_0_500000" export_row_0="  -1" export_row_1="  32"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+			</tile>
+		</row>
+		<row id="   17">
+			<tile id=" 0">
+				<strip id=" 2">
+					<operator id="NOP_I4" output="NULL" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="NULL"/>
+					<export export_symbol_0="NULL" export_symbol_1="T5" export_row_0="  -1" export_row_1="  16"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 3">
+					<operator id="DIVIDE_R4" output="RTEMP_14" input_0="EARTH_R2" input_1="T5" input_strip_0=" 5" input_strip_1=" 2" value="0.0000000000000000E+00"/>
+					<export export_symbol_0="NULL" export_symbol_1="NULL" export_row_0="  -1" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 5">
+					<operator id="NOP_I4" output="NULL" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="NULL"/>
+					<export export_symbol_0="EARTH_R2" export_symbol_1="NULL" export_row_0="   1" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+			</tile>
+		</row>
+		<row id="   18">
+			<tile id=" 0">
+				<strip id=" 2">
+					<operator id="NOP_I4" output="NULL" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="NULL"/>
+					<export export_symbol_0="T5" export_symbol_1="NULL" export_row_0="  16" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 3">
+					<operator id="ADD_R4" output="RTEMP_15" input_0="T5" input_1="RTEMP_14" input_strip_0=" 2" input_strip_1=" 3" value="0.0000000000000000E+00"/>
+					<export export_symbol_0="NULL" export_symbol_1="RTEMP_14" export_row_0="  -1" export_row_1="  17"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+			</tile>
+		</row>
+		<row id="   19">
+			<tile id=" 0">
+				<strip id=" 3">
+					<operator id="NOP_I4" output="NULL" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="NULL"/>
+					<export export_symbol_0="RTEMP_15" export_symbol_1="K_0_500000" export_row_0="  18" export_row_1="  32"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 4">
+					<operator id="MULTIPLY_R4" output="T6" input_0="RTEMP_15" input_1="K_0_500000" input_strip_0=" 3" input_strip_1=" 3" value="0.0000000000000000E+00"/>
+					<export export_symbol_0="NULL" export_symbol_1="NULL" export_row_0="  -1" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+			</tile>
+		</row>
+		<row id="   20">
+			<tile id=" 0">
+				<strip id=" 3">
+					<operator id="DIVIDE_R4" output="RTEMP_16" input_0="EARTH_R2" input_1="T6" input_strip_0=" 5" input_strip_1=" 4" value="0.0000000000000000E+00"/>
+					<export export_symbol_0="NULL" export_symbol_1="NULL" export_row_0="  -1" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 4">
+					<operator id="NOP_I4" output="NULL" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="NULL"/>
+					<export export_symbol_0="NULL" export_symbol_1="T6" export_row_0="  -1" export_row_1="  19"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 5">
+					<operator id="NOP_I4" output="NULL" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="NULL"/>
+					<export export_symbol_0="EARTH_R2" export_symbol_1="NULL" export_row_0="   1" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+			</tile>
+		</row>
+		<row id="   21">
+			<tile id=" 0">
+				<strip id=" 3">
+					<operator id="NOP_I4" output="NULL" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="NULL"/>
+					<export export_symbol_0="NULL" export_symbol_1="RTEMP_16" export_row_0="  -1" export_row_1="  20"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 4">
+					<operator id="ADD_R4" output="RTEMP_17" input_0="T6" input_1="RTEMP_16" input_strip_0=" 4" input_strip_1=" 3" value="0.0000000000000000E+00"/>
+					<export export_symbol_0="T6" export_symbol_1="NULL" export_row_0="  19" export_row_1="  -1"/>
+					<import import_symbol="RTEMP_3" source_tile=" 1" destination_row="  32"/>
+				</strip>
+			</tile>
+			<tile id=" 1">
+				<strip id=" 1">
+					<operator id="NOP_I4" output="NULL" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="NULL"/>
+					<export export_symbol_0="NULL" export_symbol_1="SUN_MASS" export_row_0="  -1" export_row_1="  33"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 3">
+					<operator id="NOP_I4" output="NULL" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="NULL"/>
+					<export export_symbol_0="G" export_symbol_1="NULL" export_row_0="  34" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 4">
+					<operator id="MULTIPLY_R4" output="RTEMP_3" input_0="G" input_1="SUN_MASS" input_strip_0=" 3" input_strip_1=" 1" value="0.0000000000000000E+00"/>
+					<export export_symbol_0="NULL" export_symbol_1="NULL" export_row_0="  -1" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+			</tile>
+		</row>
+		<row id="   22">
+			<tile id=" 0">
+				<strip id=" 2">
+					<operator id="NOP_I4" output="NULL" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="NULL"/>
+					<export export_symbol_0="NULL" export_symbol_1="NULL" export_row_0="  -1" export_row_1="  -1"/>
+					<import import_symbol="EARTH_A" source_tile=" 1" destination_row="  24"/>
+				</strip>
+				<strip id=" 3">
+					<operator id="NOP_I4" output="NULL" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="NULL"/>
+					<export export_symbol_0="NULL" export_symbol_1="K_0_500000" export_row_0="  -1" export_row_1="  32"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 4">
+					<operator id="MULTIPLY_R4" output="SQRT_VAL" input_0="RTEMP_17" input_1="K_0_500000" input_strip_0=" 4" input_strip_1=" 3" value="0.0000000000000000E+00"/>
+					<export export_symbol_0="RTEMP_17" export_symbol_1="NULL" export_row_0="  21" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+			</tile>
+			<tile id=" 1">
+				<strip id=" 2">
+					<operator id="DIVIDE_R4" output="EARTH_A" input_0="RTEMP_3" input_1="EARTH_R2" input_strip_0=" 4" input_strip_1=" 5" value="0.0000000000000000E+00"/>
+					<export export_symbol_0="NULL" export_symbol_1="NULL" export_row_0="  -1" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 4">
+					<operator id="NOP_I4" output="NULL" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="NULL"/>
+					<export export_symbol_0="RTEMP_3" export_symbol_1="NULL" export_row_0="  21" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 5">
+					<operator id="NOP_I4" output="NULL" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="NULL"/>
+					<export export_symbol_0="NULL" export_symbol_1="EARTH_R2" export_row_0="  -1" export_row_1="  32"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+			</tile>
+		</row>
+		<row id="   23">
+			<tile id=" 0">
+				<strip id=" 0">
+					<operator id="NOP_I4" output="NULL" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="NULL"/>
+					<export export_symbol_0="NULL" export_symbol_1="EARTH_X" export_row_0="  -1" export_row_1="  33"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 2">
+					<operator id="NOP_I4" output="NULL" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="NULL"/>
+					<export export_symbol_0="EARTH_A" export_symbol_1="NULL" export_row_0="  24" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 4">
+					<operator id="MULTIPLY_R4" output="RTEMP_18" input_0="EARTH_A" input_1="EARTH_X" input_strip_0=" 2" input_strip_1=" 0" value="0.0000000000000000E+00"/>
+					<export export_symbol_0="SQRT_VAL" export_symbol_1="NULL" export_row_0="  22" export_row_1="  -1"/>
+					<import import_symbol="RTEMP_19" source_tile=" 1" destination_row="  33"/>
+				</strip>
+				<strip id=" 5">
+					<operator id="COPY_R4" output="EARTH_R" input_0="SQRT_VAL" input_1="NULL" input_strip_0=" 4" input_strip_1="-1" value="0.0000000000000000E+00"/>
+					<export export_symbol_0="NULL" export_symbol_1="NULL" export_row_0="  -1" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+			</tile>
+			<tile id=" 1">
+				<strip id=" 1">
+					<operator id="NOP_I4" output="NULL" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="NULL"/>
+					<export export_symbol_0="NULL" export_symbol_1="EARTH_Y" export_row_0="  -1" export_row_1="  34"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 2">
+					<operator id="NOP_I4" output="NULL" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="NULL"/>
+					<export export_symbol_0="EARTH_A" export_symbol_1="NULL" export_row_0="  22" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 4">
+					<operator id="MULTIPLY_R4" output="RTEMP_19" input_0="EARTH_A" input_1="EARTH_Y" input_strip_0=" 2" input_strip_1=" 1" value="0.0000000000000000E+00"/>
+					<export export_symbol_0="NULL" export_symbol_1="NULL" export_row_0="  -1" export_row_1="  -1"/>
+					<import import_symbol="RTEMP_18" source_tile=" 0" destination_row="  34"/>
+				</strip>
+				<strip id=" 5">
+					<operator id="NOP_I4" output="NULL" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="NULL"/>
+					<export export_symbol_0="NULL" export_symbol_1="NULL" export_row_0="  -1" export_row_1="  -1"/>
+					<import import_symbol="EARTH_R" source_tile=" 0" destination_row="  33"/>
+				</strip>
+			</tile>
+		</row>
+		<row id="   24">
+			<tile id=" 0">
+				<strip id=" 2">
+					<operator id="NOP_I4" output="EARTH_A" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="0.0000000000000000E+00"/>
+					<export export_symbol_0="NULL" export_symbol_1="NULL" export_row_0="  -1" export_row_1="  -1"/>
+					<import import_symbol="EARTH_AX" source_tile=" 1" destination_row="  29"/>
+				</strip>
+				<strip id=" 3">
+					<operator id="DIVIDE_R4" output="EARTH_AY" input_0="RTEMP_19" input_1="EARTH_R" input_strip_0=" 4" input_strip_1=" 5" value="0.0000000000000000E+00"/>
+					<export export_symbol_0="NULL" export_symbol_1="NULL" export_row_0="  -1" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 4">
+					<operator id="NOP_I4" output="NULL" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="NULL"/>
+					<export export_symbol_0="RTEMP_19" export_symbol_1="NULL" export_row_0="  33" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 5">
+					<operator id="NOP_I4" output="NULL" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="NULL"/>
+					<export export_symbol_0="NULL" export_symbol_1="EARTH_R" export_row_0="  -1" export_row_1="  23"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+			</tile>
+			<tile id=" 1">
+				<strip id=" 2">
+					<operator id="DIVIDE_R4" output="EARTH_AX" input_0="RTEMP_18" input_1="EARTH_R" input_strip_0=" 4" input_strip_1=" 5" value="0.0000000000000000E+00"/>
+					<export export_symbol_0="NULL" export_symbol_1="NULL" export_row_0="  -1" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 4">
+					<operator id="NOP_I4" output="NULL" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="NULL"/>
+					<export export_symbol_0="RTEMP_18" export_symbol_1="NULL" export_row_0="  34" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 5">
+					<operator id="NOP_I4" output="NULL" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="NULL"/>
+					<export export_symbol_0="NULL" export_symbol_1="EARTH_R" export_row_0="  -1" export_row_1="  33"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+			</tile>
+		</row>
+		<row id="   25">
+			<tile id=" 0">
+				<strip id=" 1">
+					<operator id="NOP_I4" output="NULL" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="NULL"/>
+					<export export_symbol_0="K_3_000000" export_symbol_1="NULL" export_row_0="  31" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 2">
+					<operator id="MULTIPLY_R4" output="RTEMP_20" input_0="K_3_000000" input_1="EARTH_AX" input_strip_0=" 5" input_strip_1=" 2" value="0.0000000000000000E+00"/>
+					<export export_symbol_0="NULL" export_symbol_1="EARTH_AX" export_row_0="  -1" export_row_1="  29"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 3">
+					<operator id="NOP_I4" output="NULL" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="NULL"/>
+					<export export_symbol_0="NULL" export_symbol_1="EARTH_AY" export_row_0="  -1" export_row_1="  24"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 4">
+					<operator id="MULTIPLY_R4" output="RTEMP_24" input_0="K_3_000000" input_1="EARTH_AY" input_strip_0=" 1" input_strip_1=" 3" value="0.0000000000000000E+00"/>
+					<export export_symbol_0="NULL" export_symbol_1="NULL" export_row_0="  -1" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 5">
+					<operator id="NOP_I4" output="NULL" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="NULL"/>
+					<export export_symbol_0="K_3_000000" export_symbol_1="NULL" export_row_0="  32" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+			</tile>
+		</row>
+		<row id="   26">
+			<tile id=" 0">
+				<strip id=" 2">
+					<operator id="SUBTRACT_R4" output="RTEMP_21" input_0="RTEMP_20" input_1="P_EARTH_AX" input_strip_0=" 2" input_strip_1=" 2" value="0.0000000000000000E+00"/>
+					<export export_symbol_0="RTEMP_20" export_symbol_1="P_EARTH_AX" export_row_0="  25" export_row_1="  33"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 3">
+					<operator id="NOP_I4" output="NULL" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="NULL"/>
+					<export export_symbol_0="NULL" export_symbol_1="P_EARTH_AY" export_row_0="  -1" export_row_1="  33"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 4">
+					<operator id="SUBTRACT_R4" output="RTEMP_25" input_0="RTEMP_24" input_1="P_EARTH_AY" input_strip_0=" 4" input_strip_1=" 3" value="0.0000000000000000E+00"/>
+					<export export_symbol_0="RTEMP_24" export_symbol_1="NULL" export_row_0="  25" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+			</tile>
+		</row>
+		<row id="   27">
+			<tile id=" 0">
+				<strip id=" 2">
+					<operator id="MULTIPLY_R4" output="RTEMP_22" input_0="RTEMP_21" input_1="DELTA_TIME" input_strip_0=" 2" input_strip_1=" 3" value="0.0000000000000000E+00"/>
+					<export export_symbol_0="RTEMP_21" export_symbol_1="NULL" export_row_0="  26" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 3">
+					<operator id="NOP_I4" output="NULL" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="NULL"/>
+					<export export_symbol_0="NULL" export_symbol_1="DELTA_TIME" export_row_0="  -1" export_row_1="  34"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 4">
+					<operator id="NOP_I4" output="NULL" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="NULL"/>
+					<export export_symbol_0="RTEMP_25" export_symbol_1="NULL" export_row_0="  26" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 5">
+					<operator id="MULTIPLY_R4" output="RTEMP_26" input_0="RTEMP_25" input_1="DELTA_TIME" input_strip_0=" 4" input_strip_1=" 5" value="0.0000000000000000E+00"/>
+					<export export_symbol_0="NULL" export_symbol_1="DELTA_TIME" export_row_0="  -1" export_row_1="  34"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+			</tile>
+		</row>
+		<row id="   28">
+			<tile id=" 0">
+				<strip id=" 1">
+					<operator id="COPY_R4" output="P_EARTH_VY" input_0="EARTH_VY" input_1="NULL" input_strip_0=" 3" input_strip_1="-1" value="0.0000000000000000E+00"/>
+					<export export_symbol_0="NULL" export_symbol_1="NULL" export_row_0="  -1" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 2">
+					<operator id="MULTIPLY_R4" output="RTEMP_23" input_0="RTEMP_22" input_1="K_0_500000" input_strip_0=" 2" input_strip_1=" 3" value="0.0000000000000000E+00"/>
+					<export export_symbol_0="RTEMP_22" export_symbol_1="NULL" export_row_0="  27" export_row_1="  -1"/>
+					<import import_symbol="P_EARTH_VX" source_tile=" 1" destination_row="  34"/>
+				</strip>
+				<strip id=" 3">
+					<operator id="MULTIPLY_R4" output="RTEMP_27" input_0="RTEMP_26" input_1="K_0_500000" input_strip_0=" 5" input_strip_1=" 5" value="0.0000000000000000E+00"/>
+					<export export_symbol_0="EARTH_VY" export_symbol_1="K_0_500000" export_row_0="  29" export_row_1="  32"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 5">
+					<operator id="NOP_I4" output="NULL" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="NULL"/>
+					<export export_symbol_0="RTEMP_26" export_symbol_1="K_0_500000" export_row_0="  27" export_row_1="  33"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+			</tile>
+			<tile id=" 1">
+				<strip id=" 2">
+					<operator id="COPY_R4" output="P_EARTH_VX" input_0="EARTH_VX" input_1="NULL" input_strip_0=" 5" input_strip_1="-1" value="0.0000000000000000E+00"/>
+					<export export_symbol_0="NULL" export_symbol_1="NULL" export_row_0="  -1" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 5">
+					<operator id="NOP_I4" output="NULL" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="NULL"/>
+					<export export_symbol_0="EARTH_VX" export_symbol_1="NULL" export_row_0="  34" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+			</tile>
+		</row>
+		<row id="   29">
+			<tile id=" 0">
+				<strip id=" 2">
+					<operator id="NOP_I4" output="EARTH_AX" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="0.0000000000000000E+00"/>
+					<export export_symbol_0="NULL" export_symbol_1="RTEMP_23" export_row_0="  -1" export_row_1="  28"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 3">
+					<operator id="ADD_R4" output="EARTH_VY" input_0="EARTH_VY" input_1="RTEMP_27" input_strip_0=" 3" input_strip_1=" 3" value="0.2978000000000000E+05"/>
+					<export export_symbol_0="EARTH_VY" export_symbol_1="RTEMP_27" export_row_0="  29" export_row_1="  28"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 5">
+					<operator id="ADD_R4" output="EARTH_VX" input_0="EARTH_VX" input_1="RTEMP_23" input_strip_0=" 5" input_strip_1=" 2" value="0.0000000000000000E+00"/>
+					<export export_symbol_0="EARTH_VX" export_symbol_1="NULL" export_row_0="  29" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+			</tile>
+			<tile id=" 1">
+				<strip id=" 5">
+					<operator id="NOP_I4" output="NULL" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="NULL"/>
+					<export export_symbol_0="NULL" export_symbol_1="NULL" export_row_0="  -1" export_row_1="  -1"/>
+					<import import_symbol="EARTH_VX" source_tile=" 0" destination_row="  34"/>
+				</strip>
+			</tile>
+		</row>
+		<row id="   30">
+			<tile id=" 0">
+				<strip id=" 0">
+					<operator id="NOP_I4" output="RTEMP_4" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="0.0000000000000000E+00"/>
+					<export export_symbol_0="NULL" export_symbol_1="NULL" export_row_0="  -1" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 1">
+					<operator id="NOP_I4" output="NULL" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="NULL"/>
+					<export export_symbol_0="EARTH_Y" export_symbol_1="P_EARTH_VY" export_row_0="  33" export_row_1="  28"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 2">
+					<operator id="COPY_OUT_R4" output="WRITE_00003" input_0="EARTH_Y" input_1="NULL" input_strip_0=" 1" input_strip_1="-1" value="0.0000000000000000E+00"/>
+					<export export_symbol_0="NULL" export_symbol_1="P_EARTH_VX" export_row_0="  -1" export_row_1="  34"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 3">
+					<operator id="ADD_R4" output="RTEMP_31" input_0="EARTH_VY" input_1="P_EARTH_VY" input_strip_0=" 3" input_strip_1=" 1" value="0.0000000000000000E+00"/>
+					<export export_symbol_0="EARTH_VY" export_symbol_1="NULL" export_row_0="  29" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 5">
+					<operator id="ADD_R4" output="RTEMP_28" input_0="EARTH_VX" input_1="P_EARTH_VX" input_strip_0=" 5" input_strip_1=" 2" value="0.0000000000000000E+00"/>
+					<export export_symbol_0="EARTH_VX" export_symbol_1="NULL" export_row_0="  29" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+			</tile>
+		</row>
+		<row id="   31">
+			<tile id=" 0">
+				<strip id=" 0">
+					<operator id="NOP_I4" output="END_RUN" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="0"/>
+					<export export_symbol_0="NULL" export_symbol_1="NULL" export_row_0="  -1" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 1">
+					<operator id="NOP_I4" output="K_3_000000" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="0.3000000000000000E+01"/>
+					<export export_symbol_0="NULL" export_symbol_1="NULL" export_row_0="  -1" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 2">
+					<operator id="COPY_OUT_R4" output="WRITE_00001" input_0="TIME" input_1="NULL" input_strip_0=" 4" input_strip_1="-1" value="0.0000000000000000E+00"/>
+					<export export_symbol_0="NULL" export_symbol_1="NULL" export_row_0="  -1" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 3">
+					<operator id="NOP_I4" output="P_SCALE" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="0.1496000000000000E+12"/>
+					<export export_symbol_0="K_0_500000" export_symbol_1="RTEMP_31" export_row_0="  32" export_row_1="  30"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 4">
+					<operator id="MULTIPLY_R4" output="RTEMP_32" input_0="K_0_500000" input_1="RTEMP_31" input_strip_0=" 5" input_strip_1=" 3" value="0.0000000000000000E+00"/>
+					<export export_symbol_0="TIME" export_symbol_1="NULL" export_row_0="  34" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 5">
+					<operator id="MULTIPLY_R4" output="RTEMP_29" input_0="K_0_500000" input_1="RTEMP_28" input_strip_0=" 3" input_strip_1=" 5" value="0.0000000000000000E+00"/>
+					<export export_symbol_0="K_0_500000" export_symbol_1="RTEMP_28" export_row_0="  33" export_row_1="  30"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+			</tile>
+		</row>
+		<row id="   32">
+			<tile id=" 0">
+				<strip id=" 0">
+					<operator id="MULTIPLY_R4" output="RTEMP_30" input_0="RTEMP_29" input_1="DELTA_TIME" input_strip_0=" 5" input_strip_1=" 3" value="0.0000000000000000E+00"/>
+					<export export_symbol_0="EARTH_X" export_symbol_1="NULL" export_row_0="  33" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 1">
+					<operator id="MULTIPLY_R4" output="RTEMP_33" input_0="RTEMP_32" input_1="DELTA_TIME" input_strip_0=" 4" input_strip_1=" 5" value="0.0000000000000000E+00"/>
+					<export export_symbol_0="NULL" export_symbol_1="NULL" export_row_0="  -1" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 2">
+					<operator id="COPY_OUT_R4" output="WRITE_00002" input_0="EARTH_X" input_1="NULL" input_strip_0=" 0" input_strip_1="-1" value="0.0000000000000000E+00"/>
+					<export export_symbol_0="NULL" export_symbol_1="NULL" export_row_0="  -1" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 3">
+					<operator id="NOP_I4" output="K_0_500000" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="0.5000000000000000E+00"/>
+					<export export_symbol_0="NULL" export_symbol_1="DELTA_TIME" export_row_0="  -1" export_row_1="  34"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 4">
+					<operator id="NOP_I4" output="RTEMP_3" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="0.0000000000000000E+00"/>
+					<export export_symbol_0="RTEMP_32" export_symbol_1="NULL" export_row_0="  31" export_row_1="  -1"/>
+					<import import_symbol="TIME" source_tile=" 1" destination_row="  34"/>
+				</strip>
+				<strip id=" 5">
+					<operator id="NOP_I4" output="K_3_000000" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="0.3000000000000000E+01"/>
+					<export export_symbol_0="RTEMP_29" export_symbol_1="DELTA_TIME" export_row_0="  31" export_row_1="  34"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+			</tile>
+			<tile id=" 1">
+				<strip id=" 2">
+					<operator id="NOP_I4" output="NULL" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="NULL"/>
+					<export export_symbol_0="NULL" export_symbol_1="DELTA_TIME" export_row_0="  -1" export_row_1="  34"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 4">
+					<operator id="ADD_R4" output="TIME" input_0="TIME" input_1="DELTA_TIME" input_strip_0=" 4" input_strip_1=" 2" value="0.0000000000000000E+00"/>
+					<export export_symbol_0="TIME" export_symbol_1="NULL" export_row_0="  32" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 5">
+					<operator id="NOP_I4" output="EARTH_R2" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="0.0000000000000000E+00"/>
+					<export export_symbol_0="NULL" export_symbol_1="NULL" export_row_0="  -1" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+			</tile>
+		</row>
+		<row id="   33">
+			<tile id=" 0">
+				<strip id=" 0">
+					<operator id="ADD_R4" output="EARTH_X" input_0="EARTH_X" input_1="RTEMP_30" input_strip_0=" 0" input_strip_1=" 0" value="0.1496000000000000E+12"/>
+					<export export_symbol_0="EARTH_X" export_symbol_1="RTEMP_30" export_row_0="  33" export_row_1="  32"/>
+					<import import_symbol="END_RUN" source_tile=" 1" destination_row="  31"/>
+				</strip>
+				<strip id=" 1">
+					<operator id="ADD_R4" output="EARTH_Y" input_0="EARTH_Y" input_1="RTEMP_33" input_strip_0=" 1" input_strip_1=" 1" value="0.0000000000000000E+00"/>
+					<export export_symbol_0="EARTH_Y" export_symbol_1="RTEMP_33" export_row_0="  33" export_row_1="  32"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 2">
+					<operator id="COPY_R4" output="P_EARTH_AX" input_0="EARTH_AX" input_1="NULL" input_strip_0=" 2" input_strip_1="-1" value="-0.5929960476660494E-02"/>
+					<export export_symbol_0="EARTH_AX" export_symbol_1="NULL" export_row_0="  29" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 3">
+					<operator id="COPY_R4" output="P_EARTH_AY" input_0="EARTH_AY" input_1="NULL" input_strip_0=" 3" input_strip_1="-1" value="0.0000000000000000E+00"/>
+					<export export_symbol_0="EARTH_AY" export_symbol_1="NULL" export_row_0="  24" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 4">
+					<operator id="NOP_I4" output="RTEMP_19" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="0.0000000000000000E+00"/>
+					<export export_symbol_0="NULL" export_symbol_1="NULL" export_row_0="  -1" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 5">
+					<operator id="NOP_I4" output="K_0_500000" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="0.5000000000000000E+00"/>
+					<export export_symbol_0="NULL" export_symbol_1="NULL" export_row_0="  -1" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+			</tile>
+			<tile id=" 1">
+				<strip id=" 0">
+					<operator id="GT_R4" output="END_RUN" input_0="TIME" input_1="END_TIME" input_strip_0=" 4" input_strip_1=" 0" value="0"/>
+					<export export_symbol_0="NULL" export_symbol_1="END_TIME" export_row_0="  -1" export_row_1="  34"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 1">
+					<operator id="NOP_I4" output="SUN_MASS" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="0.1988920000000000E+31"/>
+					<export export_symbol_0="NULL" export_symbol_1="NULL" export_row_0="  -1" export_row_1="  -1"/>
+					<import import_symbol="EARTH_Y" source_tile=" 0" destination_row="  34"/>
+				</strip>
+				<strip id=" 2">
+					<operator id="NOP_I4" output="P_SCALE" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="0.1496000000000000E+12"/>
+					<export export_symbol_0="NULL" export_symbol_1="NULL" export_row_0="  -1" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 4">
+					<operator id="NOP_I4" output="NULL" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="NULL"/>
+					<export export_symbol_0="TIME" export_symbol_1="NULL" export_row_0="  32" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 5">
+					<operator id="NOP_I4" output="EARTH_R" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="0.0000000000000000E+00"/>
+					<export export_symbol_0="NULL" export_symbol_1="NULL" export_row_0="  -1" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+			</tile>
+		</row>
+		<row id="   34">
+			<tile id=" 0">
+				<strip id=" 0">
+					<operator id="BRANCH_F" output="NULL" input_0="END_RUN" input_1="LABEL_1000" input_strip_0=" 0" input_strip_1=" 1" value="NULL"/>
+					<export export_symbol_0="END_RUN" export_symbol_1="NULL" export_row_0="  31" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 1">
+					<operator id="NOP_I4" output="LABEL_1000" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="0"/>
+					<export export_symbol_0="NULL" export_symbol_1="LABEL_1000" export_row_0="  -1" export_row_1="  34"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 2">
+					<operator id="NOP_I4" output="P_EARTH_VX" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="0.0000000000000000E+00"/>
+					<export export_symbol_0="NULL" export_symbol_1="NULL" export_row_0="  -1" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 3">
+					<operator id="NOP_I4" output="DELTA_TIME" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="0.1440000000000000E+05"/>
+					<export export_symbol_0="NULL" export_symbol_1="NULL" export_row_0="  -1" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 4">
+					<operator id="NOP_I4" output="TIME" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="0.0000000000000000E+00"/>
+					<export export_symbol_0="NULL" export_symbol_1="NULL" export_row_0="  -1" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 5">
+					<operator id="NOP_I4" output="DELTA_TIME" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="0.1440000000000000E+05"/>
+					<export export_symbol_0="NULL" export_symbol_1="NULL" export_row_0="  -1" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+			</tile>
+			<tile id=" 1">
+				<strip id=" 0">
+					<operator id="NOP_I4" output="END_TIME" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="0.6311347200000000E+08"/>
+					<export export_symbol_0="NULL" export_symbol_1="NULL" export_row_0="  -1" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 1">
+					<operator id="NOP_I4" output="EARTH_Y" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="0.0000000000000000E+00"/>
+					<export export_symbol_0="NULL" export_symbol_1="NULL" export_row_0="  -1" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 2">
+					<operator id="NOP_I4" output="DELTA_TIME" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="0.1440000000000000E+05"/>
+					<export export_symbol_0="NULL" export_symbol_1="NULL" export_row_0="  -1" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 3">
+					<operator id="NOP_I4" output="G" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="-0.6673000000000000E-10"/>
+					<export export_symbol_0="NULL" export_symbol_1="NULL" export_row_0="  -1" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 4">
+					<operator id="NOP_I4" output="RTEMP_18" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="0.0000000000000000E+00"/>
+					<export export_symbol_0="NULL" export_symbol_1="NULL" export_row_0="  -1" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+				<strip id=" 5">
+					<operator id="NOP_I4" output="EARTH_VX" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="0.0000000000000000E+00"/>
+					<export export_symbol_0="NULL" export_symbol_1="NULL" export_row_0="  -1" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+			</tile>
+		</row>
+		<row id="   35">
+			<tile id=" 0">
+				<strip id=" 0">
+					<operator id="HALT" output="NULL" input_0="NULL" input_1="NULL" input_strip_0="-1" input_strip_1="-1" value="NULL"/>
+					<export export_symbol_0="NULL" export_symbol_1="NULL" export_row_0="  -1" export_row_1="  -1"/>
+					<import import_symbol="NULL" source_tile="-1" destination_row="  -1"/>
+				</strip>
+			</tile>
+		</row>
+	</map>
+</file>

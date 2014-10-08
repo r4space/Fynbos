@@ -1,0 +1,158 @@
+#This file contains an example of what will be loaded as a test bench written out in a human readable form.
+Notes:
+		-Unless otherwise specified all instructions in this test do not capture to their 'specified address'... think implications for addr2 in the instructions
+		- Lx reffers to the local data memory address of the given strip
+		- When X is used as an operand, i.e a 'don't care', the highest address in the strip-1 will be used eg; 111111....1110
+		- When X is used as a memory value, i.e a 'don't care', All but the last half byte will be ones eg; FFFFFF...FFFFF0
+		- For the most part where a values is only important as a marker and it's choice is therefore irrelevant the value given here is just an example and may be different to what is actually used depending on the mode chossen different values will be used
+
+##Standard system functionality
+#Branch testing
+Note: All instructions in this test do not capture to their 'specified address'... think implications for addr2 in the instructions
+
+#Instructions
+Tile0
+
+	Strip0(branch_false)		Strip1(branch_true)		Strip2	StripX...all strips...all tiles in the whole system
+0	L0 + L2						S0L0 == L1				
+1	S1L0 br L1					L0 T_NOP X
+2	L2 + L3						L2 + L6(3)
+3	S1L3(4) < L5				L3(4) + L5					...X T_NOP X...
+4	L3 T_NOP X					S0L3 br L6
+5	L5 - L6						L5 + L6
+6	X T_NOP X					X T_NOP X 
+
+#Data BRAM
+
+		D0	T				D1	T					D2	T	DX...	T //T here refers the value that will be in a address on program termination 
+
+0		0	B				X	1
+1		0	0				A	A
+2		1	5				3	6
+3		4	0				0	B				...XXX...
+4		X	X				0	0
+5		A	4				1	4
+6		6	6				3	3
+
+
+##On chip communication tests
+#Test all inter-strip communucation paths in all Tiles
+#This test maximises the load on a given strip's output by having all strips source the same strip's output simultaneously
+Note: Y = (Row7 + NO_STRIPS*2) and contains 0 in all strips eg here	
+
+#Instructions
+TileX
+
+		Strip0		Strip1			Strip2			StripX...All strips...all tiles in the whole system
+7	L7 T_NOP X		S0L7 + LY		S0L7 + LY		S0L7 + LY						
+8	X T_NOP L8		LY + S0L8		LY + S0L8		LY + S0L8
+9	S1L9 + LY		L9 T_NOP X		S1L9 + LY		S1L9 + LY  
+10	LY + S1L10		X T_NOP L10     LY + S1L10      LY + S1L10
+11	S2L11 + LY		S2L11 + LY		L11 T_NOP X	  	S2L11 + LY
+12	LY + S2L12      LY + S2L12      X T_NOP L12     LY + S2L12
+13	SXL13 + LY		SXL13 + LY		SXL13 + LY    	L13 T_NOP X 	
+14  LY + SXL14      LY + SXL14      LY + SXL14      X T_NOP L14
+.
+.
+.
+Y-1
+Y				. . . . . . . . . .T_NOP. . . . . . . .
+#Data BRAM
+
+		D0	T		D1	T			D2	T			DX	T...	
+
+7 		A0	A0		X	A0			X	A0			X	A0
+8 		A1	A1		X	A1			X	A1			X	A1
+9 		X	B0		B0	B0			X	B0			X	B0
+10		X	B1		B1	B1			X	B1			X	B1
+11		X	C0		X	C0			C0	C0			X	C0
+12		X	C1		X	C1			C1	C1			X	C1
+.
+.
+.
+Y		0	0		0	0			0	0			0	0
+
+
+#	Test all inter-tile communication paths between all Tiles
+#This test tries to maximises the load on a given strip's output by having all Tiles source the same strip's output simultaneously. It also tests the false NOP operation where NOP is done but a value is imported and saved
+
+Note: Z = (RowY + NO_TILES+1) and contains 0 in all strips	//18 in the following eg
+	For the purposes of this section assume 3 tiles (just for the sake of things)
+#Instructions
+--Tile0
+
+		Strip0				Strip1					Strip2					StripX...All strips...all tiles in the whole system
+15	LZ cp X					LZ cp X					LZ cp X
+16	X NOP X, SpZ+1, sel1	X NOP X, SpZ+1, sel1	X NOP X, SpZ+1, sel1			
+17	X NOP X, SpZ+2, sel2	X NOP X, SpZ+2, sel2	X NOP X, SpZ+2, sel2			
+.
+.
+Z-1
+
+--Tile1
+
+		Strip0				Strip1					Strip2					StripX...All strips...all tiles in the whole system
+15	X NOP X, SpZ+1, sel0	X NOP X, SpZ+1, sel0    X NOP X, SpZ+1, sel0    										
+16	LZ cp X                 LZ cp X                 LZ cp X
+17	X NOP X, SpZ+2, sel2	X NOP X, SpZ+2, sel2	X NOP X, SpZ+2, sel2	
+.
+.
+Z-1
+
+
+--Tile2
+
+		Strip0				Strip1					Strip2					StripX...All strips...all tiles in the whole system
+15	X NOP X, SpZ+1, sel0	X NOP X, SpZ+1, sel0    X NOP X, SpZ+1, sel0    								
+16	X NOP X, SpZ+2, sel1	X NOP X, SpZ+2, sel1	X NOP X, SpZ+2, sel1	
+17	LX cp X                 LX cp X                 LX cp X
+.
+.
+.
+Z-1
+
+#Data BRAM
+--Tile0
+		D0	T		D1	T			D2	T			DX	T...
+
+15 		X	05		X	06			X	07			X	08
+16		X	X		X	X			X	X			X	X
+17		X	X		X	X			X	X			X	X
+. 
+.
+.
+Z		05	05		06	06			07	07			08	08
+Z+1		X	19		X	1A			X	1B			X	1C
+Z+2		X	2D		X	2E			X	2F			X	24
+
+
+--Tile1
+		D0	T		D1	T			D2	T			DX	T...
+
+15 		X	X		X	X			X	X			X	X
+16		X	19		X	1A			X	1B			X	1C
+17		X	X		X	X			X	X			X	X
+. 
+.
+.
+Z		19	19		1A	1A			1B	1B			1C	1C
+Z+1		X	05		X	06			X	07			X	08
+Z+2		X	2D		X	2E			X	2F			X	24
+
+			
+--Tile2
+		D0	T		D1	T			D2	T			DX	T...
+
+15 		X	X		X	X			X	X			X	X
+16		X	X		X	X			X	X			X	X
+17		X	2D		X	2E			X	2F			X	24	
+. 
+.
+.
+Z		2D	2D		2E	2E			2F	2F			24	24
+Z+1		X	05		X	06			X	07			X	08
+Z+2		X	19		X	1A			X	1B			X	1C
+
+
+##Maybe before anything, do a system memory test, eg load unique individual values into every location and increment by one
+

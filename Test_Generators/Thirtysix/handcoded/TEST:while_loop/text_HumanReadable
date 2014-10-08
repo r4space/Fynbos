@@ -1,0 +1,37 @@
+***************************************************************************************************************************************
+------------------------------Tile0:---------------------------------
+In SO;
+	0-> L0 = L0 + L3(1), secondary at L0
+		
+	1-> L0 == L4(10)?, secondary at L1 
+		
+	2-> L1 br L8(0), secondary at L2
+		
+	3-> nop, secondary at L3
+		
+	4-> nop, secondary at L4
+		
+In S1; 
+	0-> T0S1L0 + T0S1L1, secondary at L0
+	    10 + 11 = 21 But as the loop runs this turns into a cummlative cycle of: 10+11 = 21+25 = 46+3C = 82+3C = BE+3C = FA +3C =....=226
+	1->	T0S1L2 + T0S1L3, secondary at L1
+	    12 + 13 = 25  But as the loop runs this will turn into 29 + 13 = 3C
+	2-> T0S1L4 + T0S1L5, secondary at L2
+	    14 + 15 = 29
+    3-> T0S1L6 + T0S1L7, secondary at L3
+		16 + 17 = 2D
+	4-> T0S1L8 + T0S1L9, secondary at L4
+		18 + 19 = 31
+In S2;
+	0-> T0S2L0 * T0S2L1, secondary at L0
+		100 * 101 = 10100 But as the loop runs this turns into a cummulative cycle of: 100*101=10100*10506 = 1060B0600*10C2F3C = 7FFFFFFFF
+	1-> T0S2L2 * T0S2L3, secondary at L1
+		102 * 103 = 10506	But after the 1st iteration this will change into 10506*103 = 10C2F3C 
+	2-> T0S2L4 * T0S2L5, secondary at L2
+		104 * 105 = 10914
+	3->		BLANK 
+		
+	4-> 	BLANK
+		
+
+***************************************************************************************************************************************

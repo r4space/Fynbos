@@ -1,0 +1,18 @@
+diff -r scripts/generator_functions.py scripts_backup_16_2_12/generator_functions.py
+5c5
+< DROWS =2048#Number of data registers per strip
+---
+> DROWS =2084#Number of data registers per strip
+Binary files scripts/generator_functions.pyc and scripts_backup_16_2_12/generator_functions.pyc differ
+Only in scripts: ins
+diff -r scripts/packet_assembler.py scripts_backup_16_2_12/packet_assembler.py
+216d215
+< #row = gf.int_to_bin(2047,gf.DADDR_BITS)
+218,222c217
+< #end = gf.int_to_bin(2047,gf.SC_len-gf.DADDR_BITS-9)
+< end = gf.int_to_bin(gf.DROWS,gf.SC_len-gf.DADDR_BITS-9)
+< print "Number of bits: ",gf.SC_len-gf.DADDR_BITS-9
+< print "numregs: ", gf.DROWS
+< print "numregs_binary: ", end
+---
+> end = gf.int_to_bin(0,gf.SC_len-gf.DADDR_BITS-9)	#Irrelavent, just filling with zero's

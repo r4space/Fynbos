@@ -1,0 +1,10 @@
+Install winetricks:
+wget http://winetricks.org/winetricks
+
+Run winetricks: sh winetricks
+	From the gui select to install vcrun6 (native msvcrt.dll)
+
+Run winecfg: winecfg
+	In the drives tab, add a new drive with a path to /home/user
+
+Should work now

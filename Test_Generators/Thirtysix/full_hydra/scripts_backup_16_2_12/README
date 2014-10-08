@@ -1,0 +1,5 @@
+All old fixed-point scripts are in the fixed-point folder.
+Some of the scripts sitting directly here have been migrated to floating point but not all.
+
+Test generators in the 0 series expect double the number of data rows as instruction rows
+Test generators in the 1 series expect the same number of data rows as instruction rows

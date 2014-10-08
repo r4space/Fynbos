@@ -1,0 +1,48 @@
+('len_dchunck: ', 65535)
+('count: ', 270)
+LDcommand1:  000000010000111000000000000000000010
+LDcommand2:  010E00002
+LDcommand3:  0000000010E00002
+LDprogram:  0000000010E0000200000000425C00000000000042AE0000000000004264000000000000422800000000000042A200000000
+('This is LD command: ', '0000000010E00002')
+
+Packed data portion of the program with system commands, 270 data words were read
+
+1 hydra system commands are needed to load this data
+
+The length of the LDprogram is 4368: 
+1 UDP packets are needed to transfer this data
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+../outputs/instructions/If_0_0 r
+../outputs/instructions/If_0_1 r
+../outputs/instructions/If_0_2 r
+../outputs/instructions/If_1_0 r
+../outputs/instructions/If_1_1 r
+../outputs/instructions/If_1_2 r
+../outputs/instructions/If_2_0 r
+../outputs/instructions/If_2_1 r
+../outputs/instructions/If_2_2 r
+TOTAL instruction Count:  270
+ichunck:  65535
+command1:  000000010000111000000000000000000001
+command2:  010E00001
+command3:  0000000010E00001
+LIprogram:  0000000010E00001000000002000000000000020200008010000004020001002000000602000180300000080200020040000
+This is LI command1:  0000000010E00001
+Packed instruction portion of the program with system commands, 270 instruction words were read
+
+1 hydra system commands are needed to load these instructions
+
+The length of the LIprogram is 4368: 
+1 UDP packets are needed to transfer these instructions
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+('This is the run command: ', '0000000000074003')
+Number of bits:  16
+numregs:  30
+numregs_binary:  0000000000011110
+('This is the OFLD command: ', '0000000001E03A94')
+Packed WHOLE program which fits into 2 packets
+sim_rx_data <= X"0000000010E00002";
+Packed WHOLE program into a simulation inputs file

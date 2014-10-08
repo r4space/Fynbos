@@ -1,0 +1,28 @@
+#!/usr/bin/[ython2.6
+
+#This file defines all system parameters pertaining to the hydra flavour/shape to be tested in order for a compliant test input to be generated
+
+#System-shape
+NO_TILES = 8
+NO_STRIPS = 7
+NO_ROWS = 1024
+NO_DIV_STRIPS = 2
+
+#Memory and instruction shape
+REGS_Ad_bits = 11	#Must = log((2*NO_ROWS),2) i.e be able to address twice as many registers as NO_ROWS is set to
+TILES_Ad_bits = 3
+STRIPS_Ad_bits = 3
+INSTR_WIDTH_C = 48
+
+#NUMERICS
+DATA_SIZE_C = 36	
+int_bits = 20
+frac_bits = 16
+rounding = 
+
+#OPCODES
+ADD = 
+
+
+
+

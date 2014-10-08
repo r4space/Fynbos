@@ -1,0 +1,94 @@
+# The following assumes an 2Tx3S hydra with 2 division strips as the last 2 strips in the whole system
+
+*******************************************************************************************************************************
+*******************************************************************************************************************************
+
+----INSTRUCTIONS:
+!!!! False = 0, True = 1 !!!!
+----------------------------------T0S0---------------------------------
+##Branch testing
+#Load the following instructions into T0S0 in the following rows: BRANCH if False
+Row		Addr0	Sel0		Addr1	Sel1 	Opcode		Addr		Sel2					IMP	SPEC
+0	00000000000	000		00000000010	000		000000		00000000000	000		L0	+	L2	=	L0	L0	--Implied written only
+1	00000000011	000 	00000000000	000     001100      00000000001	000		L3	LT	L0	=	L1	L1	--Implied written only
+2	00000000001	000 	00000000100	000     001000      00000000010	000		L1	BRF	L4	=	L2	L2	--Nothing written
+3	00000000011	000 	00000000000	000     000000      00000000011	000		L3	+	L0	=	L3	L3 	--Implied written only
+
+4	00000000100	000 	00000000100	000     000010      00000000100	000		L4	NOP	L4	=	L4	L4	--Nothing written 
+5	00000000101	000 	00000000101	000     000010      00000000101	000		L5	NOP	L5	=	L5	L5	--Nothing written 
+6	00000000110	000 	00000000110	000     000010      00000000110	000		L6	NOP	L6	=	L6	L6	--Nothing written 
+7	00000000111	000 	00000000111	000     000010      00000000111	000		L7	NOP	L7	=	L7	L7	--Nothing written 
+8	00000001000	000 	00000001000	000     000010      00000001000	000		L8	NOP	L8	=	L8	L8	--Nothing written 
+
+----------------------------------T0S1---------------------------------
+##Branch testing
+#Load the following instructions into T0S0 in the following rows: BRANCH if True
+Row		Addr0	Sel0		Addr1	Sel1 	Opcode		Addr		Sel2					IMP	SPEC
+0	00000000000	001 	00000000000	001     000010      00000000000	000		L0	NOP	L0	=	L0	L0	--Nothing written 
+1	00000000001	001 	00000000001	001     000010      00000000001	000		L1	NOP	L1	=	L1	L1	--Nothing written 
+2	00000000010	001 	00000000010	001     000010      00000000010	000		L2	NOP	L2	=	L2	L2	--Nothing written 
+3	00000000011	001 	00000000011	001     000010      00000000011	000		L3	NOP	L3	=	L3	L3	--Nothing written 
+
+4	00000000100	001		00000000110	001		000000		00000000000	000		L4	+	L6	=	L4	L4	--Implied written only
+5	00000000011	001 	00000000000	001     001100      00000000001	000		L4	LT	L7	=	L5	L5	--Implied written only
+6	00000000001	001 	00000000100	001     001000      00000000010	000		L5	BRT	L8	=	L6	L6	--Nothing written
+7	00000000011	001 	00000000000	001     000000      00000000011	000		L7	+	L4	=	L7	L7 	--Implied written only
+8	00000001000	001 	00000001000	001     000010      00000001000	000		L8	NOP	L8	=	L8	L8	--Nothing written 
+
+----------------------------------T0S2---------------------------------
+##Branch testing
+#Load the following instructions into T0S0 in the following rows: BRANCH if True
+Row		Addr0	Sel0		Addr1	Sel1 	Opcode		Addr		Sel2						IMP	SPEC
+0	00000000000	000 	00000000000	010     000101      00000000000	000		S0L0	CPY	L0	=	L0	L0	--Implied written only
+1	00000000000	010 	00000000001	010     001001      00000000001	000		L0		CPO	L1	=	L1	L1	--Implied written only
+2	00000000010	010 	00000000010	010     000010      00000000010	000		L2		NOP	L2	=	L2	L2	--Nothing written 
+3	00000000011	010 	00000000011	010     000010      00000000011	000		L3		NOP	L3	=	L3	L3	--Nothing written 
+
+4	00000000100	001 	00000000100	010     000101      00000000100	000		S1L4	CPY	L4	=	L4	L4	--Implied written only
+5	00000000100	010 	00000000101	010     001001      00000000101	000		L4		CPO	L5	=	L5	L5	--Implied written only
+6	00000000110	010 	00000000110	010     000010      00000000110	000		L6		NOP	L6	=	L6	L6	--Nothing written 
+7	00000000111	010 	00000000111	010     000010      00000000111	000		L7		NOP	L7	=	L7	L7	--Nothing written 
+8	00000001000	010 	00000001000	010     000010      00000001000	000		L8		NOP	L8	=	L8	L8	--Nothing written 
+
+----DATA:
+----------------------------------T0S0---------------------------------
+#Load the following data into T0S0 at the following addresses
+Address		Value:Termination value
+	0	 		0	B
+	1 			0	1* 
+	2 			1	1	
+	3 			A	15
+	4 			0	0
+	5 			X	X
+	6 			X	X
+	7 			X	X
+	8 			X	X
+*A logic not floating point value
+----------------------------------T0S1---------------------------------
+#Load the following data into T0S1 at the following addresses
+Address		Value:Termination value
+	0		 	X	X
+	1 			X	X
+	2 			X	X	
+	3 			X	X
+	4 			0	B 
+	5 			0	0*
+	6 			1	1
+	7 			B	16
+	8 			4	4
+*A logic not floating point value (although in the case of zero it appears identically)
+----------------------------------T0S2---------------------------------
+#Load the following data into T0S2 at the following addresses
+Address		Value:Termination value
+	0		 	X	A
+	1 			X	A
+	2 			X	X	
+	3 			X	X
+	4 			X	A
+	5 			X	A
+	6 			X	X
+	7 			X	X
+	8 			X	X
+---------------------------------------------------------------------------------------
+RUN:		0000000000000100 00000000000 000 000 011	Run from row 0 to 4 |
+OFFLOAD:							1001 010 001 100	Off load all data from T1S2L9 till the end | 000000000000128C

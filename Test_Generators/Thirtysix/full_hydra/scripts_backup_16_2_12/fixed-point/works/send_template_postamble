@@ -1,0 +1,57 @@
+#Sending:
+while (1):
+
+		#If last packet is about to be sent
+		if i==(len(Darray)-1):
+
+				#Send a packet
+				print("Sending last packet",i)
+				send_sock.send(Darray[i])
+
+				Results=FastReceive(data,Pcount,done)
+				data=Results[0]
+				Pcount=Results[1]
+				print ("Finished receiving %d packets"%Pcount)
+				break
+		
+		else:
+				#Send a packet
+				print("Sending packet",i)
+				send_sock.send(Darray[i])
+				i=i+1
+		
+				#Wait for a request for more data
+				request,r_addr=receive_sock.recvfrom(r_buf)
+
+
+
+#Close sockets
+send_sock.close()
+receive_sock.close()
+
+#Post processing of data
+g=0;
+temp=range(8)
+value=""
+rf=open("Received_results","w")
+print("Beginning post processing:")
+
+for z in range(Pcount):
+		for i in range(len(data[z])):
+				temp[g] = hex(ord(data[z][i]))
+				if len(temp[g])==4:
+						temp[g] =temp[g][2:]
+				else:
+						temp[g] ='0'+temp[g][2:]
+				g=g+1
+				
+				if (i+1)%8==0:
+						for h in range(0,len(temp)):
+								value=value+str(temp[h])
+						
+#						print value
+						rf.write(value+"\n")
+						g=0
+						value = ""
+rf.close()
+print("Completed successfully, find results in \'Received_results\'")
